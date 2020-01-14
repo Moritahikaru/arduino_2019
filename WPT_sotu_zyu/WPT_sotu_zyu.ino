@@ -19,6 +19,7 @@ void loop() {
   }
   else if(aizu == 'b'){
     MsTimer2::stop();
+    aizu='c';
   }
   else if(aizu == 'c'){
     //pass
