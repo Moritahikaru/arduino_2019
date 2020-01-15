@@ -36,8 +36,12 @@ void setup() {
 
 void flash(void) {
   int i = analogRead(0);
-  f = i * 5.0 / 1023.0;
-  Serial.println(f);
+  int j = analogRead(A1);
+  f1 = i * 5.0 / 1023.0;
+  f2 = j * 5.0 / 1023.0;
+  Serial.print(f1);
+  Serial.print(" ");
+  Serial.println(f2);
 }
 
 void loop() {

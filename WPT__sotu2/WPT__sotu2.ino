@@ -8,7 +8,7 @@ unsigned long long freq = 5000000ULL;           /*出力周波数50kHz(これを
 unsigned long long pll_freq = 70500000000ULL;   /*PLL周波数(いじるな)*/
 
 String data;
-int data0 = 0;
+float data0 = 0;
 float f = 0;
 
 void setup() {
@@ -61,7 +61,7 @@ void loop() {
 
 void receive_duty_data() {
   data = Serial.readString();
-  data0 = data.toInt();
+  data0 = data.toFloat();
   unsigned long long freq = data0 * 100000; /*1=0.01Hzなので末尾に00をつける.入力単位をキロにしたいので末尾に10^3をつける．*/
   si5351.set_freq(freq, SI5351_CLK0);       /*周波数セット*/
   si5351.pll_reset(SI5351_PLLA);            /*念のためPLLをリセット*/
