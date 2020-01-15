@@ -2,7 +2,7 @@
 float f = 0;
 void setup() {
   Serial.begin(57600);
-  MsTimer2::set(10000,flash);
+  MsTimer2::set(100,flash);
   while(Serial.available() == 0);
 }
 void flash(void){
@@ -20,9 +20,6 @@ void loop() {
   else if(aizu == 'b'){
     MsTimer2::stop();
     aizu='c';
-  }
-  else if(aizu == 'c'){
-    //pass
   }
 
 }
