@@ -37,7 +37,9 @@ void setup() {
 void flash(void) {
   int i = analogRead(0);
   f = i * 5.0 / 1023.0;
-  Serial.println(f);
+  Serial.println(f,4);
+  //有効数字を4桁にする．
+  //シリアルモニターは初期設定では小数第二位までしか読み取れないから.
 }
 
 void loop() {
